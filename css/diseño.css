@@ -20,7 +20,6 @@
     color: aliceblue;
 }
 
-
 .card-img, .card-img-bottom, .card-img-top{
     width: 100px;
 }
@@ -29,6 +28,13 @@
     width: 100px;
     justify-content: space-evenly;
 }
-.contPeli{
+
+.card-deck{
     padding-top: 3rem;
+}
+.navbar-light .navbar-brand{
+    color: aliceblue;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: aliceblue;
 }
