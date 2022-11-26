@@ -38,3 +38,7 @@
 .navbar-light .navbar-nav .nav-link{
     color: aliceblue;
 }
+.cuerpoPeli{
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
