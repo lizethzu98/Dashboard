@@ -24,11 +24,6 @@
     width: 100px;
 }
 
-.card, .card-body{
-    width: 100px;
-    justify-content: space-evenly;
-}
-
 .card-deck{
     padding-top: 3rem;
 }
@@ -41,4 +36,30 @@
 .cuerpoPeli{
     flex: 1 1 auto;
     padding: 1.25rem;
+}
+
+.show-peliculas{
+    min-height: 0;
+    height: auto;
+    width: 100%;
+    max-width: 1300px;
+    min-height: 355px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    transition: height .5s linear;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+}
+
+@media only screen and (min-width: 1400px)
+{
+    something {
+        --maxPrimaryPageWidth: 1300px;
+    }
+    
 }
