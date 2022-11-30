@@ -28,7 +28,7 @@
 
 </head>
 
-<body>
+<body onload="getTrending()">
     <div>
         <header>
 
@@ -78,126 +78,13 @@
             </nav>
         </header>
     </div>
-    <div class="container show-peliculas">
-        <div class="row">
-            <div>
-                <div class="card-deck" id="peliculas">
-                    <div class="card" style="width: 110rem !important;">
-                        <img class="rounded"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-peliculas-terror-2019-prodigy-1578395572.jpg?crop=1xw:1xh;center,top&resize=480:*"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <h5 class="card-title">Prodigy</h5>
-                                    <p class="card-text">15/02/2021</p>
-                                </div>
-                                <div class="col-sm-3 cal">
+    <div class="container">
+        <div class="show-peliculas">
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="rounded"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-peliculas-terror-2019-prodigy-1578395572.jpg?crop=1xw:1xh;center,top&resize=480:*"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <h5 class="card-title">Prodigy</h5>
-                                    <p class="card-text">15/02/2021</p>
-                                </div>
-                                <div class="col-sm-3 cal">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="rounded"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-peliculas-terror-2019-prodigy-1578395572.jpg?crop=1xw:1xh;center,top&resize=480:*"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <h5 class="card-title">Prodigy</h5>
-                                    <p class="card-text">15/02/2021</p>
-                                </div>
-                                <div class="col-sm-3 cal">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="rounded"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-peliculas-terror-2019-prodigy-1578395572.jpg?crop=1xw:1xh;center,top&resize=480:*"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <h5 class="card-title">Prodigy</h5>
-                                    <p class="card-text">15/02/2021</p>
-                                </div>
-                                <div class="col-sm-3 cal">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="rounded"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-peliculas-terror-2019-prodigy-1578395572.jpg?crop=1xw:1xh;center,top&resize=480:*"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <h5 class="card-title">Prodigy</h5>
-                                    <p class="card-text">15/02/2021</p>
-                                </div>
-                                <div class="col-sm-3 cal">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="rounded"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-peliculas-terror-2019-prodigy-1578395572.jpg?crop=1xw:1xh;center,top&resize=480:*"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <h5 class="card-title">Prodigy</h5>
-                                    <p class="card-text">15/02/2021</p>
-                                </div>
-                                <div class="col-sm-3 cal">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card" style="width: 18rem;">
-                        <img class="rounded"
-                            src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/poster-peliculas-terror-2019-prodigy-1578395572.jpg?crop=1xw:1xh;center,top&resize=480:*"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-sm-9">
-                                    <h5 class="card-title">Prodigy</h5>
-                                    <p class="card-text">15/02/2021</p>
-                                </div>
-                                <div class="col-sm-3 cal">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
+    
     <div class="container">
         <div class="row">
             <canvas id="myChart"></canvas>
