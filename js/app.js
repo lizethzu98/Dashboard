@@ -1,3 +1,4 @@
+
 async function getMovie() {
     const url = "https://api.themoviedb.org/3/movie/550?api_key=de504d06b064d118e6a5d2c79b8a7b00&language=es"
     const http = new XMLHttpRequest()
@@ -20,10 +21,15 @@ async function getTrending() {
     var titulo;
     var poster;
     var fecha;
+    var etiquetas = [];
+    var calificaciones = [];
     var calificacion;
     var imgUrl = 'https://www.themoviedb.org/t/p/w440_and_h660_face/';
-var contador = 0 ;
-var contador1 = 0 ;
+    var contador = 0;
+    var contador1 = 0;
+    var contadorHorror = 0;
+    var found = 0;
+
 
     http.open("GET", url)
     http.onreadystatechange = function () {
@@ -41,7 +47,17 @@ var contador1 = 0 ;
                     titulo = pelicula.title;
                     poster = imgUrl + pelicula.poster_path;
                     fecha = pelicula.release_date;
-                    
+
+                    found = pelicula.genre_ids.find(element => element == 18);
+                    console.log(found);
+                    if (found =! undefined) {
+                        console.log(found);
+                        if (contadorHorror <= 5) {
+                            etiquetas[contadorHorror] = titulo;
+                            calificaciones[contadorHorror] = Number.parseInt(pelicula.vote_average * 10, 10);
+                        }
+                        contadorHorror++;
+                    }
                 }
 
                 $('div.show-peliculas').append(`<div class='card pelicula' style='width: 15rem !important;'>
@@ -60,17 +76,19 @@ var contador1 = 0 ;
                 </div>`);
 
                 $(function () {
-                    calificacion = Number.parseInt(pelicula.vote_average*10,10);
-                    
-                    $('#cal'+contador).append(`<svg class='radial-progress' data-percentage='${calificacion}' viewBox='0 0 80 80'>
+                    calificacion = Number.parseInt(pelicula.vote_average * 10, 10);
+
+                    $('#cal' + contador).append(`<svg class='radial-progress' data-percentage='${calificacion}' viewBox='0 0 80 80'>
                         <circle class='incomplete' cx='40' cy='40' r='35'></circle>
                         <circle class='complete' cx='40' cy='40' r='35'></circle>
                         <text class='percentage' x='50%' y='57%' transform='matrix(0, 1, -1, 0, 80, 0)'>${calificacion}%</text>
                         </svg>`);
-                        contador++;
+                    contador++;
                 });
                 contador1++;
             });
+
+
 
             $(function () {
                 // Remove svg.radial-progress .complete inline styling
@@ -102,9 +120,49 @@ var contador1 = 0 ;
 
             });
 
+
+            var ctx = document.getElementById('myChart').getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: etiquetas,
+                    datasets: [{
+                        data: calificaciones,
+                        label: "Calificacion",
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 205, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(201, 203, 207, 0.2)'
+                          ],
+                          borderColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(255, 159, 64)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)'
+                          ],
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                },
+            });
+
         }
     }
     http.send();
+
+
 }
 
 
